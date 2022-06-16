@@ -48,17 +48,18 @@ func cast_beam() -> void:
 	force_raycast_update()
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
-		collision_particles.process_material.direction = Vector3(
-			get_collision_normal().x, get_collision_normal().y, 0
-		)
+#		collision_particles.process_material.direction = Vector3(
+#			get_collision_normal().x, get_collision_normal().y, 0
+#		)
+		collision_particles.direction = Vector2(get_collision_normal().x, get_collision_normal().y)
 
 	collision_particles.emitting = is_colliding()
 
 	fill.points[1] = cast_point
 	collision_particles.position = cast_point
 	beam_particles.position = cast_point * 0.5
-	beam_particles.process_material.emission_box_extents.x = cast_point.length() * 0.5
-
+	#beam_particles.process_material.emission_box_extents.x = cast_point.length() * 0.5
+	beam_particles.emission_rect_extents.x = cast_point.length() * 0.5
 
 func appear() -> void:
 	if tween.is_active():

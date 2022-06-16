@@ -49,7 +49,7 @@ scale_random = 1.0
 scale_curve = SubResource( 6 )
 color_ramp = SubResource( 4 )
 
-[node name="DustEmitter" type="Particles2D"]
+[node name="DustEmitter" type="CPUParticles2D"]
 emitting = false
 amount = 6
 one_shot = true

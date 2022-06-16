@@ -1,5 +1,5 @@
 # One-shot particle emitter that recycles itself after use.
-extends Particles2D
+extends CPUParticles2D
 
 onready var timer := $Timer
 var is_dying := false

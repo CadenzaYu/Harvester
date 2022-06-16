@@ -23,9 +23,11 @@ onready var gun := $Gun
 onready var laser_gun := $LaserGun
 onready var vfx := $VFX
 
+var repair_speed := 0.0
 
 func _ready() -> void:
 	stats.initialize()
+	repair_speed = stats.get_max_health() / 10.0
 	Events.connect("damaged", self, "_on_damaged")
 	Events.connect("upgrade_chosen", self, "_on_upgrade_chosen")
 	stats.connect("health_depleted", self, "die")
@@ -79,3 +81,8 @@ func _on_upgrade_chosen(choice: int) -> void:
 			# don't have limits
 			if gun.stats.get_stat("cooldown") > 0.2:
 				gun.stats.add_modifier("cooldown", -0.05)
+
+
+func _on_RepairTimer_timeout():
+	if stats.health < stats.get_max_health():
+		stats.health += repair_speed
