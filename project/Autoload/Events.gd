@@ -38,3 +38,5 @@ signal explosion_occurred
 enum UpgradeChoices { HEALTH, SPEED, CARGO, MINING, WEAPON }
 
 enum UITypes { UPGRADE, QUIT }
+
+var joystick

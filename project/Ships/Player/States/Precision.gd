@@ -8,7 +8,7 @@ extends PlayerState
 export var speed_multiplier := 0.75
 
 var _face: GSAIFace
-var _toggled := false
+var _toggled := true
 
 onready var _target_location := GSAIAgentLocation.new()
 onready var acceleration := GSAITargetAcceleration.new()
@@ -59,18 +59,19 @@ func unhandled_input(event: InputEvent) -> void:
 
 
 func get_movement() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("right") - Input.get_action_strength("left"),
-		Input.get_action_strength("down") - Input.get_action_strength("up")
-	)
+#	return Vector2(
+#		Input.get_action_strength("right") - Input.get_action_strength("left"),
+#		Input.get_action_strength("down") - Input.get_action_strength("up")
+#	)
+	return Events.joystick.get_value()
 
 
 func get_direction() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("face_right") - Input.get_action_strength("face_left"),
-		Input.get_action_strength("face_down") - Input.get_action_strength("face_up")
-	)
-
+#	return Vector2(
+#		Input.get_action_strength("face_right") - Input.get_action_strength("face_left"),
+#		Input.get_action_strength("face_down") - Input.get_action_strength("face_up")
+#	)
+	return Events.joystick.get_value()
 
 func _update_mouse_target() -> void:
 	var mouse_position: Vector2 = ship.get_global_mouse_position()

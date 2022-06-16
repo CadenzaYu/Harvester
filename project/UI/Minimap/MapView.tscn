@@ -2,7 +2,6 @@
 
 [ext_resource path="res://UI/Minimap/MapView.gd" type="Script" id=1]
 
-
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 0, 0, 0, 1 )
@@ -17,9 +16,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1280, 720 )

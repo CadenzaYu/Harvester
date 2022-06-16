@@ -31,7 +31,7 @@ map_icon = ExtResource( 8 )
 
 [node name="StateMachine" type="Node" parent="." index="2"]
 script = ExtResource( 2 )
-initial_state = NodePath("Move/Travel")
+initial_state = NodePath("Move/Precision")
 
 [node name="Move" type="Node" parent="StateMachine" index="0"]
 script = ExtResource( 3 )

@@ -22,12 +22,6 @@
 [ext_resource path="res://VFX/PostProcessGameView.gd" type="Script" id=21]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=22]
 
-
-
-
-
-
-
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("MapView/Viewport")
 
@@ -90,13 +84,13 @@ pause_mode = 2
 layer = 2
 script = ExtResource( 17 )
 
-[node name="HUD" parent="UI" instance=ExtResource( 22 )]
-mouse_filter = 2
-
 [node name="MapDisplay" parent="UI" instance=ExtResource( 10 )]
 pause_mode = 1
 texture = SubResource( 1 )
 flip_v = true
+
+[node name="HUD" parent="UI" instance=ExtResource( 22 )]
+mouse_filter = 2
 
 [node name="UpgradeUI" parent="UI" instance=ExtResource( 16 )]
 visible = false
@@ -129,5 +123,4 @@ __meta__ = {
 environment = SubResource( 4 )
 
 [editable path="MapView"]
-
 [editable path="DistortMaskView"]

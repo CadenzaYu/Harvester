@@ -118,9 +118,11 @@ func unhandled_input(event: InputEvent) -> void:
 			_current_docking_point.undock()
 			_parent.linear_velocity += direction * docking_release_speed
 
-		_state_machine.transition_to("Move/Travel")
+		#_state_machine.transition_to("Move/Travel")
+		_state_machine.transition_to("Move/Precision", {toggled = true})
 
 
 func _on_Ship_force_undock() -> void:
 	Events.disconnect("force_undock", self, "_on_Ship_force_undock")
-	_state_machine.transition_to("Move/Travel")
+	#_state_machine.transition_to("Move/Travel")
+	_state_machine.transition_to("Move/Precision", {toggled = true})

@@ -15,7 +15,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	yield(owner, "ready")
-	state.enter()
+	#state.enter()
+	state.enter({toggled = true})
 
 
 func _unhandled_input(event: InputEvent) -> void:
