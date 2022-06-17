@@ -19,11 +19,10 @@ script = ExtResource( 8 )
 [node name="Background" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+mouse_filter = 2
 
 [node name="MainScreen" parent="Background" instance=ExtResource( 1 )]
+mouse_filter = 2
 
 [node name="Context" type="Control" parent="."]
 anchor_left = 0.6
@@ -33,6 +32,7 @@ anchor_bottom = 0.75
 margin_left = -40.0
 margin_top = -20.0
 margin_bottom = 20.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
