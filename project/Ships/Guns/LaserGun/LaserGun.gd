@@ -5,6 +5,7 @@ class_name LaserGun
 extends Node2D
 
 export var damage_per_second := 200.0
+export var energe := 60.0
 
 onready var laser_beam := $LaserBeam2D
 onready var shooter := owner
@@ -21,7 +22,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if laser_beam.is_colliding():
+	energe -= delta
+	if energe < 0:
+		set_is_firing(false)
+	elif laser_beam.is_colliding():
 		Events.emit_signal("damaged", laser_beam.get_collider(), damage_per_second * delta, shooter)
 
 
@@ -39,3 +43,6 @@ func set_is_firing(firing: bool) -> void:
 func set_collision_mask(new_mask: int) -> void:
 	collision_mask = new_mask
 	laser_beam.collision_mask = collision_mask
+	
+func has_energe():
+	return energe > 0

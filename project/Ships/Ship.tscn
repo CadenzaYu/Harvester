@@ -1,14 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Ships/Player/topdown-player.svg" type="Texture" id=1]
+[ext_resource path="res://Ships/Player/playerShip2_orange.png" type="Texture" id=1]
 [ext_resource path="res://Ships/Guns/Gun.tscn" type="PackedScene" id=2]
 
-
-
-
-[node name="Ship" type="KinematicBody2D" groups=[
-"mini-map",
-]]
+[node name="Ship" type="KinematicBody2D" groups=["mini-map"]]
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

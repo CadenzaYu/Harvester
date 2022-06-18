@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "AdMob",
+"language": "GDScript",
+"path": "res://admob-lib/admob.gd"
+}, {
 "base": "Range",
 "class": "AnimatedBar",
 "language": "GDScript",
@@ -305,6 +310,7 @@ _global_script_classes=[ {
 "path": "res://World/DockingPoint/TweenAura.gd"
 } ]
 _global_script_class_icons={
+"AdMob": "res://admob-lib/icon.png",
 "AnimatedBar": "",
 "Asteroid": "",
 "AsteroidCluster": "",
@@ -372,6 +378,8 @@ config/name="Harvester"
 config/description="Harvester is a top down space mining game meant to showcase the Godot Steering AI Framework for AI agents."
 run/main_scene="res://UI/MainMenu.tscn"
 config/icon="res://icon.png"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
 
 [autoload]
 

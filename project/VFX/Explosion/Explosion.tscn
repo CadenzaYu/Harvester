@@ -168,6 +168,7 @@ script = ExtResource( 4 )
 Shockwave = ExtResource( 7 )
 
 [node name="SmokeParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
 amount = 16
 lifetime = 3.0
 preprocess = 0.6

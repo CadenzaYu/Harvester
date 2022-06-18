@@ -35,6 +35,8 @@ signal mine_finished
 
 signal explosion_occurred
 
+signal earned_rewarded(amount)
+
 enum UpgradeChoices { HEALTH, SPEED, CARGO, MINING, WEAPON }
 
 enum UITypes { UPGRADE, QUIT }

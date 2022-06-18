@@ -5,18 +5,13 @@
 [ext_resource path="res://World/DockingPoint/asteroid_map_icon.tres" type="Resource" id=3]
 [ext_resource path="res://World/DockingPoint/TweenAura.gd" type="Script" id=4]
 
-
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 200.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 81.3653
 
-[node name="DockingPoint" type="Node2D" groups=[
-"mini-map",
-"world_objects",
-]]
+[node name="DockingPoint" type="Node2D" groups=["mini-map", "world_objects"]]
 script = ExtResource( 1 )
 map_icon = ExtResource( 3 )
 

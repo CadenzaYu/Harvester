@@ -5,6 +5,7 @@ onready var screen_fader: TextureRect = $ScreenFader
 onready var map: TextureRect = $MapDisplay
 onready var upgrade_menu := $UpgradeUI
 onready var quit_menu := $QuitMenu
+onready var admob := $"../AdMob"
 
 
 func _ready() -> void:
@@ -31,4 +32,6 @@ func quit() -> void:
 func reset(with_delay: bool) -> void:
 	screen_fader.fade_out(with_delay)
 	yield(screen_fader, "animation_finished")
+	if admob.is_rewarded_interstitial_loaded():
+		admob.show_rewarded_interstitial()
 	get_tree().change_scene("res://UI/MainMenu.tscn")

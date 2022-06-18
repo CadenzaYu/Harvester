@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://World/Spawners/AsteroidSpawner.gd" type="Script" id=1]
 [ext_resource path="res://World/Spawners/StationSpawner.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://UI/Minimap/MapView.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/GameInitializer.gd" type="Script" id=7]
 [ext_resource path="res://VFX/BackgroundStars.tscn" type="PackedScene" id=8]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=9]
 [ext_resource path="res://UI/Minimap/MapDisplay.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Main/white.png" type="Texture" id=11]
 [ext_resource path="res://World/ShakingCamera.tscn" type="PackedScene" id=12]
@@ -121,6 +122,19 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 9 )
+is_real = true
+banner_on_top = false
+banner_id = "ca-app-pub-7934104401485861/4571327875"
+interstitial_id = "ca-app-pub-7934104401485861/4651218922"
+rewarded_id = "ca-app-pub-7934104401485861/8455297214"
+rewarded_interstitial_id = "ca-app-pub-7934104401485861/1381655773"
+
+[connection signal="initialization_complete" from="AdMob" to="." method="_on_AdMob_initialization_complete"]
+[connection signal="rewarded_interstitial_ad_closed" from="AdMob" to="." method="_on_AdMob_rewarded_interstitial_ad_closed"]
+[connection signal="user_earned_rewarded" from="AdMob" to="." method="_on_AdMob_user_earned_rewarded"]
 
 [editable path="MapView"]
 [editable path="DistortMaskView"]

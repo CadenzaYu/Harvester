@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://VFX/LaserBeam/LaserBeam.gd" type="Script" id=1]
 [ext_resource path="res://VFX/glowing_circle.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0.496454, 1 ), 0.0, -3.79205, 0, 0, Vector2( 0.996454, 0.0136364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.583, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.0318182 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996454, 0.0136364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0.496454, 0.995454 ), 0.0, -3.84546, 0, 0, Vector2( 0.992908, 0.0136364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0.583, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
 [node name="LaserBeam2D" type="RayCast2D"]
 enabled = true
@@ -26,6 +43,11 @@ emitting = false
 lifetime = 0.3
 local_coords = false
 texture = ExtResource( 2 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+scale_amount = 0.5
+scale_amount_curve = SubResource( 1 )
+color_ramp = SubResource( 2 )
 
 [node name="BeamParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 1.5, 1.5, 1.5, 1 )
@@ -37,8 +59,16 @@ local_coords = false
 draw_order = 1
 texture = ExtResource( 2 )
 emission_shape = 2
-emission_rect_extents = Vector2( 4, 1 )
+emission_rect_extents = Vector2( 60, 20 )
+flag_align_y = true
+direction = Vector2( -1, 0 )
+spread = 0.0
 gravity = Vector2( 0, 0 )
+initial_velocity = 30.0
+tangential_accel = 100.0
+tangential_accel_random = 1.0
+scale_amount = 0.3
+scale_amount_curve = SubResource( 3 )
 
 [node name="CollisionParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 1.5, 1.5, 1.5, 1 )
@@ -48,5 +78,11 @@ amount = 16
 lifetime = 0.3
 local_coords = false
 texture = ExtResource( 2 )
+spread = 50.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 300.0
+scale_amount = 0.5
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="."]

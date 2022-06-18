@@ -30,6 +30,7 @@ func _ready() -> void:
 	repair_speed = stats.get_max_health() / 10.0
 	Events.connect("damaged", self, "_on_damaged")
 	Events.connect("upgrade_chosen", self, "_on_upgrade_chosen")
+	Events.connect("earned_rewarded", self, "_on_earned_rewarded")
 	stats.connect("health_depleted", self, "die")
 	gun.collision_mask = projectile_mask
 	laser_gun.collision_mask = projectile_mask
@@ -86,3 +87,6 @@ func _on_upgrade_chosen(choice: int) -> void:
 func _on_RepairTimer_timeout():
 	if stats.health < stats.get_max_health():
 		stats.health += repair_speed
+
+func _on_earned_rewarded(amount:float) -> void:
+	laser_gun.energe += amount
