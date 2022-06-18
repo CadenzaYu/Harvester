@@ -1,129 +1,39 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://VFX/Explosion/sparkle.png" type="Texture" id=1]
-[ext_resource path="res://VFX/Explosion/explosion_gradient_2.tres" type="Texture" id=2]
 [ext_resource path="res://VFX/Explosion/puff.png" type="Texture" id=3]
 [ext_resource path="res://VFX/Explosion/Explosion.gd" type="Script" id=4]
 [ext_resource path="res://VFX/Explosion/puff_smooth.png" type="Texture" id=5]
-[ext_resource path="res://VFX/Explosion/scraps_gradient.tres" type="Texture" id=6]
 [ext_resource path="res://VFX/ShockwaveEmitter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://VFX/Explosion/Explosion_01.wav" type="AudioStream" id=8]
 
+[sub_resource type="Curve" id=24]
+_data = [ Vector2( 0, 0.318182 ), 0.0, 0.0, 0, 0, Vector2( 0.425532, 0.945454 ), 0.0, 0.0, 0, 0, Vector2( 0.698582, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996454, 0.545455 ), 0.0, 0.0, 0, 0 ]
 
-
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=25]
 offsets = PoolRealArray( 0.0494297, 0.913043, 1 )
 colors = PoolColorArray( 0.226562, 0.217086, 0.217086, 1, 0.133333, 0.12549, 0.12549, 1, 0.133333, 0.12549, 0.12549, 0 )
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="Curve" id=18]
+_data = [ Vector2( 0, 0.522727 ), 0.0, 0.0, 0, 0, Vector2( 0.751773, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.992908, 0.331818 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Curve" id=3]
-_data = [ Vector2( 0, 0.290223 ), 0.0, 3.6562, 0, 0, Vector2( 0.682482, 1 ), -0.0677277, -0.0677277, 0, 0, Vector2( 1, 0.554545 ), -0.29932, 0.0, 0, 0 ]
+[sub_resource type="Gradient" id=19]
+offsets = PoolRealArray( 0, 0.155894, 0.505017, 0.8327, 1 )
+colors = PoolColorArray( 0.258824, 0.25098, 0.25098, 1, 0.722656, 0.118153, 0.118153, 1, 0.855469, 0.323879, 0.126857, 1, 1, 0.788235, 0.309804, 0.717647, 1, 1, 1, 0 )
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="Curve" id=20]
+_data = [ Vector2( 0, 0.0431818 ), 0.0, 0.0, 0, 0, Vector2( 0.485816, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996454, 0.025 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="ParticlesMaterial" id=5]
-emission_shape = 1
-emission_sphere_radius = 40.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 80.0
-initial_velocity_random = 0.6
-angular_velocity = 40.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-damping = 40.0
-damping_random = 0.5
-angle = 360.0
-angle_random = 1.0
-scale = 2.6
-scale_random = 0.5
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
-
-[sub_resource type="Curve" id=6]
-_data = [ Vector2( 0, 0.438776 ), 0.0, 0.11528, 0, 0, Vector2( 0.770073, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.336735 ), -0.564845, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
-
-[sub_resource type="ParticlesMaterial" id=8]
-trail_divisor = 30
-emission_shape = 1
-emission_sphere_radius = 15.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 850.0
-initial_velocity_random = 0.4
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-tangential_accel = 1000.0
-tangential_accel_random = 0.5
-damping = 1000.0
-damping_random = 1.0
-angle_random = 1.0
-scale = 0.2
-scale_random = 0.2
-scale_curve = SubResource( 7 )
-color_ramp = ExtResource( 6 )
-
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id=21]
 offsets = PoolRealArray( 0, 0.130909, 0.345455, 0.607273, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.648972, 0.164062, 1, 1, 0.475624, 0.136719, 1, 0.888672, 0.17704, 0.17704, 1, 0.203922, 0.203922, 0.203922, 1 )
 
-[sub_resource type="GradientTexture" id=10]
-gradient = SubResource( 9 )
+[sub_resource type="Curve" id=22]
+_data = [ Vector2( 0, 0.0545454 ), 0.0, 0.0, 0, 0, Vector2( 0.251773, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996454, 0.0181818 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Curve" id=11]
-_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.483222, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=12]
-curve = SubResource( 11 )
-
-[sub_resource type="ParticlesMaterial" id=13]
-lifetime_randomness = 1.0
-emission_shape = 1
-emission_sphere_radius = 50.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-radial_accel = 200.0
-tangential_accel = 100.0
-scale = 0.1
-scale_random = 0.47
-scale_curve = SubResource( 12 )
-color_ramp = SubResource( 10 )
-
-[sub_resource type="Curve" id=14]
-_data = [ Vector2( 0, 0.0409091 ), 0.0, 8.35303, 0, 0, Vector2( 0.251678, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.993289, 0.0136364 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
-
-[sub_resource type="ParticlesMaterial" id=16]
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 350.0
-initial_velocity_random = 0.5
-angular_velocity = 80.0
-angular_velocity_random = 0.8
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-damping = 100.0
-damping_random = 0.85
-angle = 220.0
-angle_random = 1.0
-scale = 2.0
-scale_random = 0.02
-scale_curve = SubResource( 15 )
-color_ramp = ExtResource( 2 )
+[sub_resource type="Gradient" id=23]
+offsets = PoolRealArray( 0, 0.0945455, 0.181818, 0.389091, 0.570909, 0.865455 )
+colors = PoolColorArray( 0.976471, 0.878431, 0.705882, 0, 0.97568, 0.84943, 0.605487, 1, 0.972656, 0.754792, 0.26258, 1, 1, 0.45265, 0.155894, 1, 0.831373, 0.219608, 0.219608, 1, 0.258824, 0.25098, 0.25098, 1 )
 
 [sub_resource type="Animation" id=17]
 length = 4.0
@@ -258,14 +168,27 @@ script = ExtResource( 4 )
 Shockwave = ExtResource( 7 )
 
 [node name="SmokeParticles2D" type="CPUParticles2D" parent="."]
-emitting = false
 amount = 16
 lifetime = 3.0
 preprocess = 0.6
 explosiveness = 0.6
 local_coords = false
-process_material = SubResource( 5 )
 texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 40.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 80.0
+initial_velocity_random = 0.6
+angular_velocity = 40.0
+damping = 40.0
+damping_random = 0.5
+angle = 360.0
+angle_random = 1.0
+scale_amount = 2.6
+scale_amount_random = 0.5
+scale_amount_curve = SubResource( 24 )
+color_ramp = SubResource( 25 )
 
 [node name="Scraps" type="Node2D" parent="."]
 
@@ -278,8 +201,22 @@ explosiveness = 0.66
 randomness = 0.5
 local_coords = false
 draw_order = 1
-process_material = SubResource( 8 )
 texture = ExtResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 850.0
+initial_velocity_random = 0.4
+tangential_accel = 1000.0
+tangential_accel_random = 0.5
+damping = 1000.0
+damping_random = 1.0
+angle_random = 1.0
+scale_amount = 0.2
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 18 )
+color_ramp = SubResource( 19 )
 
 [node name="ScrapsParticles2D2" type="CPUParticles2D" parent="Scraps"]
 modulate = Color( 1.3, 1.3, 1.3, 1 )
@@ -291,8 +228,22 @@ explosiveness = 0.66
 randomness = 0.5
 local_coords = false
 draw_order = 1
-process_material = SubResource( 8 )
 texture = ExtResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 850.0
+initial_velocity_random = 0.4
+tangential_accel = 1000.0
+tangential_accel_random = 0.5
+damping = 1000.0
+damping_random = 1.0
+angle_random = 1.0
+scale_amount = 0.2
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 18 )
+color_ramp = SubResource( 19 )
 
 [node name="ScrapsParticles2D3" type="CPUParticles2D" parent="Scraps"]
 modulate = Color( 1.3, 1.3, 1.3, 1 )
@@ -304,8 +255,22 @@ explosiveness = 0.66
 randomness = 0.5
 local_coords = false
 draw_order = 1
-process_material = SubResource( 8 )
 texture = ExtResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 850.0
+initial_velocity_random = 0.4
+tangential_accel = 1000.0
+tangential_accel_random = 0.5
+damping = 1000.0
+damping_random = 1.0
+angle_random = 1.0
+scale_amount = 0.2
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 18 )
+color_ramp = SubResource( 19 )
 
 [node name="ScrapsParticles2D4" type="CPUParticles2D" parent="Scraps"]
 modulate = Color( 1.3, 1.3, 1.3, 1 )
@@ -317,8 +282,22 @@ explosiveness = 0.66
 randomness = 0.5
 local_coords = false
 draw_order = 1
-process_material = SubResource( 8 )
 texture = ExtResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 850.0
+initial_velocity_random = 0.4
+tangential_accel = 1000.0
+tangential_accel_random = 0.5
+damping = 1000.0
+damping_random = 1.0
+angle_random = 1.0
+scale_amount = 0.2
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 18 )
+color_ramp = SubResource( 19 )
 
 [node name="ScrapsParticles2D5" type="CPUParticles2D" parent="Scraps"]
 modulate = Color( 1.3, 1.3, 1.3, 1 )
@@ -330,8 +309,22 @@ explosiveness = 0.66
 randomness = 0.5
 local_coords = false
 draw_order = 1
-process_material = SubResource( 8 )
 texture = ExtResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 15.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 850.0
+initial_velocity_random = 0.4
+tangential_accel = 1000.0
+tangential_accel_random = 0.5
+damping = 1000.0
+damping_random = 1.0
+angle_random = 1.0
+scale_amount = 0.2
+scale_amount_random = 0.2
+scale_amount_curve = SubResource( 18 )
+color_ramp = SubResource( 19 )
 
 [node name="SparkleParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 1.5, 1.5, 1.5, 1 )
@@ -339,8 +332,17 @@ emitting = false
 amount = 32
 explosiveness = 0.2
 randomness = 1.0
-process_material = SubResource( 13 )
 texture = ExtResource( 1 )
+emission_shape = 1
+emission_sphere_radius = 50.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+radial_accel = 200.0
+tangential_accel = 100.0
+scale_amount = 0.1
+scale_amount_random = 0.47
+scale_amount_curve = SubResource( 20 )
+color_ramp = SubResource( 21 )
 
 [node name="FireBallParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color( 1.1, 1.1, 1.1, 1 )
@@ -350,8 +352,21 @@ lifetime = 0.5
 randomness = 1.0
 local_coords = false
 draw_order = 1
-process_material = SubResource( 16 )
 texture = ExtResource( 3 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 350.0
+initial_velocity_random = 0.5
+angular_velocity = 80.0
+angular_velocity_random = 0.8
+damping = 100.0
+damping_random = 0.85
+angle = 220.0
+angle_random = 1.0
+scale_amount = 2.0
+scale_amount_random = 0.02
+scale_amount_curve = SubResource( 22 )
+color_ramp = SubResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Explode"

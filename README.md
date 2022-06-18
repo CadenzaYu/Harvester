@@ -37,10 +37,10 @@ The game uses the [Godot Steering AI Framework](https://github.com/GDQuest/godot
 
 ## Player controls
 
-- Travel mode: <kbd>A</kbd> and <kbd>D</kbd> rotate the ship, while <kbd>W</kbd> and <kbd>S</kbd> thrust forward and back.
-- Shoot with <kbd>Spacebar</kbd>. The vessel has energy guns that can become stronger.
-- Dock with <kbd>E</kbd>: When approaching an asteroid or a station, the player can activate docking mode, and an AI will take over to steer them into position and lock them in place.
-- Open the map with <kbd>M</kbd>: The player can bring up a navigation map to get a look at where asteroids are and where pirates are.
+- Travel mode: use virtual joystick to  rotate  and move the ship.
+- Shoot with <kbd>F</kbd> Button. The vessel has energy guns that can become stronger.
+- Dock with <kbd>D</kbd> Button: When approaching an asteroid or a station, the player can activate docking mode, and an AI will take over to steer them into position and lock them in place.
+- Open the map with <kbd>M</kbd> Button: The player can bring up a navigation map to get a look at where asteroids are and where pirates are.
 
 ### Pirates
 
