@@ -31,6 +31,7 @@ func mine_amount(value: float) -> float:
 	if is_equal_approx(iron_amount, 0.0):
 		undock()
 		shrink()
+		#emit_signal("depleted")
 	elif not anim_player.is_playing():
 		fx_anim_player.play("pulse")
 

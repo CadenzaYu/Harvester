@@ -28,6 +28,7 @@ func spawn_asteroid_clusters(
 	while spawned_iron < target_iron_amount:
 		var cluster := _spawn_asteroid_cluster(rng, world_radius)
 		spawned_iron += cluster.iron_amount
+		cluster.connect("cluster_depleted", self, "_on_AsteroidCluster_depleted")
 	return spawned_iron
 
 
