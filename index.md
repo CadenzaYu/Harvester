@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+# Harvester
 
-You can use the [editor on GitHub](https://github.com/CadenzaYu/Harvester/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![Banner of the project, showing stylized asteroids and ships in space](./banner.svg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Harvester is a Free and Open-Source top-down space mining game made with the [Godot game engine](https://godotengine.org/). Control your spaceship in forays into an asteroid belt, gather iron, and bring it back to base. Spend them on upgrading your ship's speed and maneuverability and cargo space.
 
-### Markdown
+But beware, as you are not alone out here. Pirate miners are out there and want to monopolize the business.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+➡ Follow us on [Twitter](https://twitter.com/NathanGDQuest) and [YouTube](https://www.youtube.com/c/gdquest/) for free game creation tutorials, tips, and news! Get one of our [Godot game creation courses](https://gdquest.mavenseed.com/) to support our work on Free Software.
 
-```markdown
-Syntax highlighted code block
+![The player's ship, docked on an asteroid, mining](./harvester-v1.0-mining.png)
 
-# Header 1
-## Header 2
-### Header 3
+## Summary
 
-- Bulleted
-- List
+The player begins with a ship at their space station in a relatively large, procedurally generated map filled with asteroids. Their job is to navigate their way to find asteroid pockets, dock with them to mine, then dock with the station to drop them off and earn an upgrade.
 
-1. Numbered
-2. List
+As they accumulate iron, enemy pirates spawn around asteroid pockets. This forces the player to take different paths until they can destroy the interlopers.
 
-**Bold** and _Italic_ and `Code` text
+The player continues until they are overwhelmed by the mounting difficulty and growing opposition and sees how far they can go.
 
-[Link](url) and ![Image](src)
-```
+## Contributing
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+Contributors are welcome!
 
-### Jekyll Themes
+If you encounter a bug, please [open an issue](https://github.com/GDQuest/godot-game-harvester/issues/new).
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CadenzaYu/Harvester/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+If you want to contribute to the project, for instance by fixing a bug or adding a feature, check out our:
 
-### Support or Contact
+1. [Contributor's guidelines](https://www.gdquest.com/docs/guidelines/contributing-to/gdquest-projects/).
+1. [GDScript style guide](https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+![A ship is exploding after an encounter with pirates](./harvester-v1.0-explosion.png)
+
+## Development
+
+The game uses the [Godot Steering AI Framework](https://github.com/GDQuest/godot-steering-ai-framework) while still being a fun time waster.
+
+## Player controls
+
+- Travel mode: use virtual joystick to  rotate  and move the ship.
+- Shoot with <kbd>F</kbd> Button. The vessel has energy guns that can become stronger.
+- Dock with <kbd>D</kbd> Button: When approaching an asteroid or a station, the player can activate docking mode, and an AI will take over to steer them into position and lock them in place.
+- Open the map with <kbd>M</kbd> Button: The player can bring up a navigation map to get a look at where asteroids are and where pirates are.
+
+### Pirates
+
+- Spawning: Every time the player deposits a certain amount of cargo in the station, pirates spawn around some of the asteroids.
+- Movement: Pirates move in precision mode. They chase the player, get within weapons fire range, but don't get too close. They do avoid asteroids not to crash into them. Once out of range, they steer back to their spawn point.
+
+### Upgrades
+
+Depositing iron into the station raises a percentage bar. When it hits 100%, the player can select from a small number of upgrades: health, speed, rotation speed, cargo space, and weapons damage.
+
+### Map
+
+The map is made up of a number of asteroid pockets separated by some distance. Asteroids have a certain amount of iron in them and vanish when emptied. More asteroids can spawn on a timer to fill some of the empty gaps.
