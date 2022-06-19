@@ -8,7 +8,7 @@ But beware, as you are not alone out here. Pirate miners are out there and want 
 
 ➡ Follow us on [Twitter](https://twitter.com/NathanGDQuest) and [YouTube](https://www.youtube.com/c/gdquest/) for free game creation tutorials, tips, and news! Get one of our [Godot game creation courses](https://gdquest.mavenseed.com/) to support our work on Free Software.
 
-![The player's ship, docked on an asteroid, mining](./harvester-v1.0-mining.png)
+![The player's ship, docked on an asteroid, mining](./3.png)
 
 ## Summary
 
