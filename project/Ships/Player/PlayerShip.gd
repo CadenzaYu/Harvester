@@ -61,7 +61,8 @@ func grab_camera(camera: Camera2D) -> void:
 func _on_damaged(target: Node, amount: int, _origin: Node) -> void:
 	if not target == self:
 		return
-
+	if OS.get_name() == "Android":
+		Input.vibrate_handheld()
 	stats.health -= amount
 
 
