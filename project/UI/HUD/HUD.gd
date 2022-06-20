@@ -10,9 +10,6 @@ func initialize(player: PlayerShip) -> void:
 	shield_bar.initialize(player)
 	cargo_gauge.initialize(player)
 	
-func _ready():
-	Events.joystick = $Joystick
-
 func _on_FireButton_pressed():
 	var a = InputEventAction.new()
 	if laser_gun.has_energe():
@@ -44,3 +41,11 @@ func _on_FireButton_released():
 		a.action = "fire"
 	a.pressed = false
 	Input.parse_input_event(a)
+
+
+func _on_joystickRight_pressed():
+	_on_FireButton_pressed()
+
+
+func _on_joystickRight_released():
+	_on_FireButton_released()

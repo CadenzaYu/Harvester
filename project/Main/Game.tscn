@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://World/Spawners/AsteroidSpawner.gd" type="Script" id=1]
 [ext_resource path="res://World/Spawners/StationSpawner.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://VFX/DistortMaskView.tscn" type="PackedScene" id=20]
 [ext_resource path="res://VFX/PostProcessGameView.gd" type="Script" id=21]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=22]
+[ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=23]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("MapView/Viewport")
@@ -103,6 +104,24 @@ mouse_filter = 2
 visible = false
 mouse_filter = 2
 
+[node name="joystickLeft" parent="UI" instance=ExtResource( 23 )]
+joystick_mode = 1
+action_left = "left"
+action_right = "right"
+action_up = "up"
+action_down = "down"
+
+[node name="joystickRight" parent="UI" instance=ExtResource( 23 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -250.0
+margin_right = -50.0
+joystick_mode = 1
+action_left = "face_left"
+action_right = "face_right"
+action_up = "face_up"
+action_down = "face_down"
+
 [node name="PostProcessedLayer" type="CanvasLayer" parent="."]
 
 [node name="GameView" type="TextureRect" parent="PostProcessedLayer"]
@@ -132,6 +151,8 @@ interstitial_id = "ca-app-pub-7934104401485861/4651218922"
 rewarded_id = "ca-app-pub-7934104401485861/8455297214"
 rewarded_interstitial_id = "ca-app-pub-7934104401485861/1381655773"
 
+[connection signal="pressed" from="UI/joystickRight" to="UI/HUD" method="_on_joystickRight_pressed"]
+[connection signal="released" from="UI/joystickRight" to="UI/HUD" method="_on_joystickRight_released"]
 [connection signal="initialization_complete" from="AdMob" to="." method="_on_AdMob_initialization_complete"]
 [connection signal="rewarded_interstitial_ad_closed" from="AdMob" to="." method="_on_AdMob_rewarded_interstitial_ad_closed"]
 [connection signal="user_earned_rewarded" from="AdMob" to="." method="_on_AdMob_user_earned_rewarded"]

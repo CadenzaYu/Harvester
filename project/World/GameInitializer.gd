@@ -68,3 +68,5 @@ func _on_AdMob_rewarded_interstitial_ad_closed():
 
 func _on_AdMob_user_earned_rewarded(currency, amount):
 	Events.emit_signal("earned_rewarded", amount * 60.0)
+
+
