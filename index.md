@@ -8,7 +8,7 @@ But beware, as you are not alone out here. Pirate miners are out there and want 
 
 ➡ Follow us on [Twitter](https://twitter.com/NathanGDQuest) and [YouTube](https://www.youtube.com/c/gdquest/) for free game creation tutorials, tips, and news! Get one of our [Godot game creation courses](https://gdquest.mavenseed.com/) to support our work on Free Software.
 
-![The player's ship, docked on an station, updating](./3.png)
+![The player's ship, docked on an station, updating](./Shotcut_640.png)
 
 ## Summary
 
@@ -29,7 +29,7 @@ If you want to contribute to the project, for instance by fixing a bug or adding
 1. [Contributor's guidelines](https://www.gdquest.com/docs/guidelines/contributing-to/gdquest-projects/).
 1. [GDScript style guide](https://www.gdquest.com/docs/guidelines/best-practices/godot-gdscript/)
 
-![A ship is exploding after an encounter with pirates](./harvester-v1.0-explosion.png)
+![A ship is exploding after an encounter with pirates](./Shotcut_280.png)
 
 ## Development
 
