@@ -14,8 +14,8 @@ var _body_ref: WeakRef
 func _init(_body: RigidBody) -> void:
 	if not _body.is_inside_tree():
 		yield(_body, "ready")
+	self.body = _body
 
-	_body_ref = weakref(_body)
 	# warning-ignore:return_value_discarded
 	_body.get_tree().connect("physics_frame", self, "_on_SceneTree_frame")
 
@@ -26,7 +26,7 @@ func _apply_steering(acceleration: GSAITargetAcceleration, _delta: float) -> voi
 	var _body: RigidBody = _body_ref.get_ref()
 	if not _body:
 		return
-
+		
 	_applied_steering = true
 	_body.apply_central_impulse(acceleration.linear)
 	_body.apply_torque_impulse(Vector3.UP * acceleration.angular)
@@ -36,6 +36,7 @@ func _apply_steering(acceleration: GSAITargetAcceleration, _delta: float) -> voi
 
 
 func _set_body(value: RigidBody) -> void:
+	body = value
 	_body_ref = weakref(value)
 
 	_last_position = value.transform.origin
@@ -49,7 +50,10 @@ func _on_SceneTree_frame() -> void:
 	var _body: RigidBody = _body_ref.get_ref()
 	if not _body:
 		return
-
+	
+	if not _body.is_inside_tree() or _body.get_tree().paused:
+		return
+		
 	var current_position := _body.transform.origin
 	var current_orientation := _body.rotation.y
 
