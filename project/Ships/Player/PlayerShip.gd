@@ -34,6 +34,7 @@ func _ready() -> void:
 	stats.connect("health_depleted", self, "die")
 	gun.collision_mask = projectile_mask
 	laser_gun.collision_mask = projectile_mask
+	laser_gun.energe = Settings.save_dict["laser_energe"]
 
 
 func _toggle_map(map_up: bool, tween_time: float) -> void:
@@ -47,6 +48,8 @@ func die() -> void:
 	var effect := ExplosionEffect.instance()
 	effect.global_position = global_position
 	ObjectRegistry.register_effect(effect)
+	Settings.save_dict["laser_energe"] = laser_gun.energe 
+	Settings.save_game()
 
 	emit_signal("died")
 	Events.emit_signal("player_died")
@@ -79,6 +82,7 @@ func _on_upgrade_chosen(choice: int) -> void:
 			cargo.stats.add_modifier("unload_rate", 5.0)
 		Events.UpgradeChoices.WEAPON:
 			gun.stats.add_modifier("damage", 3.0)
+			laser_gun.damage_per_second *= 1.2
 			# That's a limitation of the stats system, modifiers only add or remove values, and they
 			# don't have limits
 			if gun.stats.get_stat("cooldown") > 0.2:

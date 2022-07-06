@@ -13,7 +13,7 @@ func _ready() -> void:
 	Events.connect("quit_requested", self, "quit")
 	Events.connect("upgrade_unlocked", upgrade_menu, "open")
 	screen_fader.fade_in()
-
+	Settings.joystick_r = $joystickRight
 
 func _unhandled_input(event: InputEvent) -> void:
 	if get_tree().paused:

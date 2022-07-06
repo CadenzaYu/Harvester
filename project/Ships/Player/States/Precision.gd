@@ -66,11 +66,14 @@ func get_movement() -> Vector2:
 
 
 func get_direction() -> Vector2:
-	return Vector2(
-		Input.get_action_strength("face_right") - Input.get_action_strength("face_left"),
-		Input.get_action_strength("face_down") - Input.get_action_strength("face_up")
-	)
-
+	if Settings.joystick_r.is_pressed():
+		return Vector2(
+			Input.get_action_strength("face_right") - Input.get_action_strength("face_left"),
+			Input.get_action_strength("face_down") - Input.get_action_strength("face_up")
+		)
+	else:
+		return get_movement()
+		
 func _update_mouse_target() -> void:
 	var mouse_position: Vector2 = ship.get_global_mouse_position()
 	_target_location.position.x = mouse_position.x

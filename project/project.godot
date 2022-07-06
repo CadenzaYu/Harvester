@@ -391,6 +391,7 @@ config/quit_on_go_back=false
 
 Events="*res://Autoload/Events.gd"
 ObjectRegistry="*res://Autoload/ObjectRegistry.tscn"
+Settings="*res://Autoload/Settings.gd"
 
 [debug]
 
@@ -406,7 +407,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/virtual_joystick/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [input]
 
